@@ -28,7 +28,7 @@ export default function Navbar() {
       >
         <div className="h-24 w-24 overflow-hidden rounded-full border border-white/10 shadow-xl shadow-cyan-500/10 ring-2 ring-cyan-400/20 transition duration-300 hover:ring-cyan-300/60">
           <motion.img
-            src="/public/profile.jpeg"
+            src="/profile.jpeg"
             alt="Arjun Kumar profile"
             whileHover={{ scale: 1.08 }}
             transition={{ type: 'spring', stiffness: 200, damping: 20 }}
