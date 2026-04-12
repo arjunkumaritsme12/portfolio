@@ -24,17 +24,19 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center gap-2 text-center text-slate-200"
+        className="flex flex-col items-center gap-3 text-center text-slate-200"
       >
-        <motion.img
-          src="/profile.jpg"
-          alt="Arjun Kumar profile"
-          whileHover={{ scale: 1.08 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-          className="h-20 w-20 rounded-full border border-white/10 object-cover shadow-xl shadow-cyan-500/10 ring-2 ring-cyan-400/20 transition duration-300 hover:ring-cyan-300/60"
-        />
-        <p className="text-sm font-semibold uppercase tracking-[0.3em]">Arjun Kumar</p>
-        <p className="text-[11px] uppercase tracking-[0.28em] text-slate-400">AI / AIML Student</p>
+        <div className="h-24 w-24 overflow-hidden rounded-full border border-white/10 shadow-xl shadow-cyan-500/10 ring-2 ring-cyan-400/20 transition duration-300 hover:ring-cyan-300/60">
+          <motion.img
+            src="/public/profile.jpeg"
+            alt="Arjun Kumar profile"
+            whileHover={{ scale: 1.08 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            className="h-full w-full object-cover object-[center_40%] scale-150"
+          />
+        </div>
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">Arjun Kumar</p>
+        <p className="text-[11px] uppercase tracking-[0.22em] text-cyan-300">AI & AIML Student</p>
       </motion.div>
 
       <nav className="hidden items-center gap-6 md:flex">
