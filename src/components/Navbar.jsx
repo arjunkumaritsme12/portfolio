@@ -54,10 +54,10 @@ export default function Navbar() {
       </nav>
 
       <div className="flex items-center gap-3">
-        <a href="https://github.com/" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-cyan-500/20">
+        <a href="https://github.com/arjunkumaritsme12" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-cyan-500/20">
           <Github size={18} />
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-violet-500/20">
+        <a href="https://www.linkedin.com/in/arjun-kumar-89343228b/" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-violet-500/20">
           <Linkedin size={18} />
         </a>
         <a href="/resume.pdf" download className="hidden interactive-card rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 md:inline-flex">
