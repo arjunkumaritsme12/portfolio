@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  background-color: #02060f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(circle at top left, rgba(56,189,248,0.1), transparent 28%), radial-gradient(circle at bottom right, rgba(168,85,247,0.1), transparent 30%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(56,189,248,0.35);
+  color: #ffffff;
+}
+
+button,
+input,
+textarea,
+a {
+  transition: all 0.2s ease;
+}
+
+@layer utilities {
+  .interactive-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s ease, border-color .25s ease, background-color .25s ease, box-shadow .25s ease;
+    transform: translateZ(0);
+    will-change: transform, box-shadow, border-color, background-color, opacity;
+  }
+
+  .interactive-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 38%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(56, 189, 248, 0.45);
+    background-color: rgba(15, 23, 42, 0.94);
+    box-shadow: 0 32px 100px rgba(56, 189, 248, 0.22);
+  }
+
+  .interactive-card:hover::before {
+    opacity: 0.12;
+  }
+
+  .interactive-card-soft:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 20px 60px rgba(56, 189, 248, 0.14);
+  }
+}
