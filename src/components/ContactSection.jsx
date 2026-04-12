@@ -23,7 +23,7 @@ export default function ContactSection() {
           initial={{ scale: 0.98, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.7 }}
-          action="https://formsubmit.co/roy.prajapat.143@gmail.com"
+          action="https://formsubmit.co/40132433a339f8ac349b155e38c0c6db"
           method="POST"
           className="interactive-card space-y-5 rounded-[32px] border border-white/10 bg-slate-950/60 p-8 shadow-glow md:p-10"
         >
