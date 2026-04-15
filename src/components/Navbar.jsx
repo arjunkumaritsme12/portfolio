@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
-import { Github, Linkedin, Download } from 'lucide-react'
+import { NavLink, Link } from 'react-router-dom'
 
 const links = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
+  { label: 'Achievements', to: '/achievements' },
+  { label: 'Certifications', to: '/certifications' },
   { label: 'Skills', to: '/skills' },
-  { label: 'Experience', to: '/experience' },
   { label: 'Projects', to: '/projects' },
+  { label: 'Hire Me', to: '/hire' },
   { label: 'Contact', to: '/contact' }
 ]
 
@@ -17,35 +18,19 @@ export default function Navbar() {
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="sticky top-0 z-30 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 backdrop-blur-xl"
+      className="sticky top-0 z-30 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-8 bg-[#020617]/80 backdrop-blur-xl"
     >
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col items-center gap-3 text-center text-slate-200"
-      >
-        <div className="h-24 w-24 overflow-hidden rounded-full border border-white/10 shadow-xl shadow-cyan-500/10 ring-2 ring-cyan-400/20 transition duration-300 hover:ring-cyan-300/60">
-          <motion.img
-            src="/profile.jpeg"
-            alt="Arjun Kumar profile"
-            whileHover={{ scale: 1.08 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-            className="h-full w-full object-cover object-[center_40%] scale-150"
-          />
-        </div>
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">Arjun Kumar</p>
-        <p className="text-[11px] uppercase tracking-[0.22em] text-cyan-300">AI & AIML Student</p>
-      </motion.div>
+      <Link to="/" className="text-2xl font-bold text-white flex items-baseline">
+        Arjun<span className="text-purple-500 text-3xl leading-none">.</span>
+      </Link>
 
-      <nav className="hidden items-center gap-6 md:flex">
+      <nav className="hidden items-center gap-6 xl:gap-8 md:flex">
         {links.map((item) => (
           <NavLink
             key={item.label}
             to={item.to}
             className={({ isActive }) =>
-              `text-sm transition ${isActive ? 'text-cyan-300' : 'text-slate-300 hover:text-cyan-300'}`
+              `text-[14px] font-medium transition ${isActive ? 'text-purple-400' : 'text-slate-400 hover:text-purple-400'}`
             }
           >
             {item.label}
@@ -53,16 +38,10 @@ export default function Navbar() {
         ))}
       </nav>
 
-      <div className="flex items-center gap-3">
-        <a href="https://github.com/arjunkumaritsme12" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-cyan-500/20">
-          <Github size={18} />
-        </a>
-        <a href="https://www.linkedin.com/in/arjun-kumar-89343228b/" target="_blank" rel="noreferrer" className="interactive-card-soft rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:bg-violet-500/20">
-          <Linkedin size={18} />
-        </a>
-        <a href="/resume.pdf" download className="hidden interactive-card rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 md:inline-flex">
-          <Download size={16} /> Resume
-        </a>
+      <div className="flex items-center">
+        <Link to="/hire" className="hidden rounded-xl bg-purple-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(168,85,247,0.39)] transition hover:bg-purple-700 hover:shadow-[0_6px_20px_rgba(168,85,247,0.23)] hover:-translate-y-0.5 md:inline-flex">
+          Hire Me
+        </Link>
       </div>
     </motion.header>
   )

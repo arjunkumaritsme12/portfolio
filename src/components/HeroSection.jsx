@@ -1,65 +1,60 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Mail, MapPin, Briefcase } from 'lucide-react'
+import { Linkedin, Github, Twitter } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section id="about" className="relative flex flex-col gap-10 rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_0_80px_rgba(255,255,255,0.02)] backdrop-blur-xl md:p-12">
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-2xl space-y-5">
-          <motion.span initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="inline-flex rounded-full bg-cyan-500/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-cyan-300">
-            AI / Full Stack Innovator
-          </motion.span>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Arjun Kumar
-            </h1>
-            <p className="mt-5 max-w-xl text-slate-300 sm:text-lg">
-              B.Tech CSE student specializing in AIML & IoT. I design premium data products, build intelligent applications, and bring generative AI experiences to life.
-            </p>
-          </motion.div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="interactive-card rounded-3xl border border-white/10 bg-slate-950/40 p-5">
-              <span className="text-sm uppercase tracking-[0.24em] text-slate-400">Location</span>
-              <p className="mt-3 flex items-center gap-2 text-lg text-white"><MapPin size={18} /> Mathura, UP</p>
-            </div>
-            <div className="interactive-card rounded-3xl border border-white/10 bg-slate-950/40 p-5">
-              <span className="text-sm uppercase tracking-[0.24em] text-slate-400">Degree</span>
-              <p className="mt-3 text-lg text-white">B.Tech CSE (AIML & IoT)</p>
-            </div>
-            <div className="interactive-card rounded-3xl border border-white/10 bg-slate-950/40 p-5">
-              <span className="text-sm uppercase tracking-[0.24em] text-slate-400">Expected</span>
-              <p className="mt-3 text-lg text-white">Graduation 2027</p>
-            </div>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
-              <Mail size={16} /> Contact me
-            </Link>
-            <a href="/resume.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-slate-200 transition hover:border-cyan-300 hover:text-cyan-200">
-              Resume download
-            </a>
-          </div>
-        </div>
+    <section id="about" className="relative flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between w-full mt-8 md:mt-16">
 
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mx-auto flex h-[360px] w-full max-w-sm items-center justify-center rounded-[32px] border border-white/10 bg-gradient-to-br from-cyan-500/20 via-slate-900/40 to-violet-500/10 p-6 shadow-glow">
-          <div className="absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.2),_transparent_38%)]" />
-          <div className="relative z-10 flex h-full w-full flex-col justify-between rounded-[28px] border border-white/10 bg-slate-950/60 p-6 backdrop-blur-2xl">
-            <div className="space-y-4">
-              <div className="rounded-3xl bg-slate-900/60 p-4 text-sm text-slate-300">Premium AI, analytics, and product systems with fluid interfaces.</div>
-              <div className="grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
-                <div className="rounded-3xl bg-white/5 p-4">Deloitte, Codex Techno, Micro IT Services</div>
-                <div className="rounded-3xl bg-white/5 p-4">Machine Learning • NLP • Generative AI</div>
-              </div>
-            </div>
+      {/* Left Column (Text) */}
+      <div className="flex flex-col max-w-xl space-y-6 lg:w-1/2">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <h1 className="text-[40px] leading-tight font-extrabold tracking-tight text-white sm:text-6xl md:leading-[1.1]">
+            Hi, I'm <span className="text-purple-500">Arjun Kumar</span>
+          </h1>
+          <h2 className="mt-3 text-[22px] font-bold text-slate-200 sm:text-3xl">
+            AIML Enthusiast & Full Stack Developer
+          </h2>
+          <p className="mt-6 text-[17px] text-slate-400 leading-relaxed font-medium">
+            B.Tech CSE student specializing in AIML & IoT, passionate about building real-world applications and exploring AI technologies.
+          </p>
+        </motion.div>
 
-            <div className="interactive-card rounded-3xl border border-cyan-400/10 bg-white/5 p-5 text-center text-slate-100 shadow-xl shadow-cyan-500/10">
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Current focus</p>
-              <p className="mt-3 text-lg font-semibold">Intelligent systems, predictive modeling, and full-stack product design.</p>
-            </div>
-          </div>
+        {/* Buttons */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="flex flex-wrap items-center gap-4 pt-4">
+          <Link to="/hire" className="inline-flex items-center justify-center rounded-xl bg-purple-600 px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_4px_14px_0_rgba(168,85,247,0.39)] transition hover:bg-purple-700 hover:shadow-[0_6px_20px_rgba(168,85,247,0.23)] hover:-translate-y-0.5">
+            Hire Me
+          </Link>
+          <a href="/projects" className="inline-flex items-center justify-center rounded-xl border-2 border-slate-700 bg-transparent px-8 py-3.5 text-[15px] font-bold text-slate-300 transition hover:border-purple-500 hover:text-purple-500 hover:bg-purple-500/5">
+            See Projects
+          </a>
+        </motion.div>
+
+        {/* Social Icons */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="flex items-center gap-3 pt-6">
+          <a href="https://www.linkedin.com/in/arjun-kumar-89343228b/" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-600 text-white transition hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+            <Linkedin size={18} fill="currentColor" strokeWidth={0} />
+          </a>
+          <a href="https://github.com/arjunkumaritsme12" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-600 text-white transition hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+            <Github size={18} fill="currentColor" strokeWidth={0} />
+          </a>
+          <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 text-white transition hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+            <Twitter size={18} fill="currentColor" strokeWidth={0} />
+          </a>
         </motion.div>
       </div>
+
+      {/* Right Column (Image) */}
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mx-auto flex w-full max-w-sm items-center justify-center lg:w-1/2">
+        <div className="interactive-card relative w-full overflow-hidden rounded-full border-8 border-white/10 shadow-2xl aspect-square bg-gradient-to-br from-purple-500/20 to-transparent group cursor-pointer transition-all duration-300 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)]">
+          <img
+            src="/profile.jpeg"
+            alt="Arjun Kumar Portrait"
+            className="relative z-10 w-full h-full object-cover scale-125 object-[center_20%] transition-transform duration-500 group-hover:scale-[1.35]"
+          />
+        </div>
+      </motion.div>
+
     </section>
   )
 }
