@@ -45,14 +45,49 @@ export default function HeroSection() {
       </div>
 
       {/* Right Column (Image) */}
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mx-auto flex w-full max-w-sm items-center justify-center lg:w-1/2">
-        <div className="interactive-card relative w-full overflow-hidden rounded-full border-8 border-white/10 shadow-2xl aspect-square bg-gradient-to-br from-purple-500/20 to-transparent group cursor-pointer transition-all duration-300 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)]">
-          <img
-            src="/profile.jpeg"
-            alt="Arjun Kumar Portrait"
-            className="relative z-10 w-full h-full object-cover scale-125 object-[center_20%] transition-transform duration-500 group-hover:scale-[1.35]"
-          />
-        </div>
+      <motion.div
+        initial={{ opacity: 0, y: -90, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.85, ease: 'easeOut' }}
+        className="relative mx-auto flex w-full max-w-sm items-center justify-center lg:w-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          className="relative w-full"
+        >
+          <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-purple-500/20 via-transparent to-cyan-400/10 blur-3xl opacity-80" />
+          <motion.div
+            className="interactive-card relative w-full overflow-hidden rounded-full border-8 border-white/10 shadow-2xl aspect-square bg-[#0b1324]/80 backdrop-blur-xl"
+          >
+            <motion.img
+              src="/profile.jpeg"
+              alt="Arjun Kumar Portrait"
+              initial={{ scale: 0.97 }}
+              animate={{ scale: [0.97, 1.03, 0.97] }}
+              transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+              className="relative z-10 w-full h-full object-cover object-[center_20%]"
+            />
+            <motion.div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-full bg-white/5"
+              animate={{ opacity: [0.35, 0.08, 0.35] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.span
+              aria-hidden="true"
+              className="absolute -right-6 top-1/4 h-16 w-16 rounded-full border border-purple-300/30 bg-purple-500/10 blur-2xl"
+              animate={{ opacity: [0.7, 0.2, 0.7] }}
+              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.span
+              aria-hidden="true"
+              className="absolute -left-5 bottom-10 h-12 w-12 rounded-full border border-cyan-300/30 bg-cyan-400/10 blur-2xl"
+              animate={{ opacity: [0.6, 0.2, 0.6] }}
+              transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </motion.div>
+        </motion.div>
       </motion.div>
 
     </section>
